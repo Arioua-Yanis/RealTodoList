@@ -16,10 +16,10 @@
     </div>
     <footer class="footer">
       <span class="todo-count"><strong>{{remaining}}</strong> Tâche(s) a faire</span>
-      <ul>
-        <li><a href="#">Toutes</a></li>
-        <li><a href="#">A faire</a></li>
-        <li><a href="#">Faites</a></li>
+      <ul class="filters">
+        <li><a href="#" class="{selected: filter === 'all'}">Toutes</a></li>
+        <li><a href="#" class="{selected: filter === 'todo'}">A faire</a></li>
+        <li><a href="#" class="{selected: filter === 'done'}">Faites</a></li>
       </ul>
     </footer>
   </section>
@@ -33,7 +33,8 @@
           name: 'tache de test',
           completed: false
         }],
-        newTodo: ''
+        newTodo: '',
+        filter: 'all',
       }
     },
     methods: {
@@ -43,7 +44,7 @@
           completed: false,
           name: this.newTodo
         })
-        this.newTodo = ''
+        this.newTodo = '',
       }
     },
     computed: {
