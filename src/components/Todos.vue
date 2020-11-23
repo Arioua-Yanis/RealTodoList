@@ -45,6 +45,11 @@
         oldTodo: ''
       }
     },
+    watch: {
+      value (value) {
+        this.todos = value
+      }
+    },
     methods: {
 
       addTodo () {
