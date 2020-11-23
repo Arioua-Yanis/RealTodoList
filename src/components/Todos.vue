@@ -11,6 +11,7 @@
           <div class="view">
             <input type="checkbox" v-model="todo.completed">
             <label>{{todo.name}}</label>
+            <button class="destroy" @click.prevent="deleteTodo(todo)"></button>
           </div>
         </li>
       </ul>
@@ -46,6 +47,9 @@
           name: this.newTodo
         })
         this.newTodo = ''
+      },
+      deleteTodo (todo) {
+        this.todos = this.todos.filter(i => i !== todo)
       }
     },
     computed: {
