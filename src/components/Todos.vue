@@ -41,7 +41,8 @@
         }],
         newTodo: '',
         filter: 'all',
-        editing: null
+        editing: null,
+        oldTodo: ''
       }
     },
     methods: {
@@ -61,9 +62,14 @@
       },
       editTodo (todo) {
         this.editing = todo
+        this.oldTodo = todo.name
       },
       doneEdit () {
         this.editing = null
+      },
+      cancelEdit () {
+        this.editing.name = this.oldTodo
+        this.doneEdit()
       }
     },
     computed: {
