@@ -1,6 +1,10 @@
 <template>
   <div>
+    {{todos}}
     <todos v-model="todos"></todos>
+    <todos v-model="todos"></todos>
+    <todos v-model="todos"></todos>
+    <button @click="addTodo">Ajouter une tâche</button>
   </div>
 </template>
 
